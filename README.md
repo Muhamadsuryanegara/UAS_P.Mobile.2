@@ -1,40 +1,25 @@
-# flutter_uas_mobile_akhir
-API Daftar Stasiun Kereta Api di Indonesia
-Profil
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Biodata</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Nama</strong></td>
-<td>Muhamad Suryanegara</td>
-</tr>
-<tr>
-<td><strong>NIM</strong></td>
-<td>312110447</td>
-</tr>
-<tr>
-<td><strong>Kelas</strong></td>
-<td>TI.21.A.1</td>
-</tr>
-<tr>
-<td><strong>Mata Kuliah</strong></td>
-<td>Pemrograman Mobile 2</td>
-</tr>
-</tbody>
-</table>
+## Ujian AKhir Semester Pemograman Mobile 2
 
-<h3> Tutorial </h3>
-buka aplikasi Visual Studio Code , kemudian buat project baru dengan mengklik Ctrl + Shift + P
+## API Daftar Stasiun Kereta Api di Indonesia
 
+## Profil
+| #               | Biodata                  |
+| --------------- | --------------------     |
+| **Nama**        | Muhamad Suryanegara      |
+| **NIM**         | 312110447                |
+| **Kelas**       | TI.21.A.1                |
+| **Mata Kuliah** | Pemrograman Mobile 2     |
+
+A new Flutter project.
+
+# Tutorial
+buka aplikasi `Visual Studio Code`  , kemudian buat project baru dengan mengklik `Ctrl + Shift + P`  
+```
 
 - Lalu, pada direktori lib > main.dart hapus semua kode, kemudian ubah dengan kode ini:
 
-import 'package:flutter/material.dart';
+```
+    import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -93,22 +78,34 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+```
+
 - Kemudian, tambahkan `APIKEY` kalian dalam url.
 
 ```dart
-        (Uri.parse('https://booking.kai.id/api/stations2'));
+       (Uri.parse('https://booking.kai.id/api/stations2'));
+```
 
-Dan jangan lupa menambahkan Library http pada file pubspec.yaml.
+- Dan jangan lupa menambahkan Library http pada file `pubspec.yaml`.
 
+```dart
 dependencies:
   flutter:
     sdk: flutter
   http: ^0.13.4
+```
 
-Buka terminal, Kemudian run command flutter run.
-Maka hasilnya akan seperti ini :>
+- Buka terminal, Kemudian run command `flutter run`.
+- Maka hasilnya akan seperti ini :>
 
-![Screenshot 2023-07-05 114823](https://github.com/Muhamadsuryanegara/UAS_P.Mobile.2/assets/92678339/10a5f35f-7f87-4ffd-bf39-76adeb87d5a5)
+## Berikut adalah hasilnya
 
-Kode diatas dapat kalian improvisasi dengan kreasi kalian sendiri.
-Terima Kasih!
+![Screenshot 2023-07-05 114823](https://github.com/Muhamadsuryanegara/UAS_P.Mobile.2/assets/92678339/c6a19c21-c8b1-49f4-9305-35de658ef6c1)
+
+
+- Kode diatas dapat kalian improvisasi dengan kreasi kalian sendiri.
+
+## Terima Kasih!
+
+
+
