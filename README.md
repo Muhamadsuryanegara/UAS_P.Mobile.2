@@ -39,7 +39,18 @@ class _MyAppState extends State<MyApp> {
     var response = await http.get(Uri.parse('https://booking.kai.id/api/stations2'));
     if (response.statusCode == 200) {
       setState(() {
-        stationData = json.decode(response.body) as List<dynamic>;
+        List<dynamic> responseData = json.decode(response.body) as List<dynamic>;
+        for (var station in responseData) {
+          String code = station['code'];
+          String cityname = station['cityname'];
+          station['cityname'] = cityname;
+          stationData.add({
+            'code': code,
+            'name': station['name'],
+            'city': station['city'],
+            'cityname': cityname,
+          });
+        }
       });
     } else {
       print('Failed to fetch data from API.');
@@ -69,7 +80,14 @@ class _MyAppState extends State<MyApp> {
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
               title: Text(stationData[index]['name']),
-              subtitle: Text(stationData[index]['city']),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Code: ${stationData[index]['code']}'),
+                  Text('City: ${stationData[index]['city']}'),
+                  Text('City Name: ${stationData[index]['cityname']}'),
+                ],
+              ),
             );
           },
         ),
@@ -100,7 +118,8 @@ dependencies:
 
 ## Berikut adalah hasilnya
 
-![Screenshot 2023-07-05 114823](https://github.com/Muhamadsuryanegara/UAS_P.Mobile.2/assets/92678339/c6a19c21-c8b1-49f4-9305-35de658ef6c1)
+![image](https://github.com/Muhamadsuryanegara/UAS_P.Mobile.2/assets/92678339/79d60c31-97bb-442e-88ef-40a8efbace24)
+
 
 
 - Kode diatas dapat kalian improvisasi dengan kreasi kalian sendiri.
